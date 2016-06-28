@@ -1,0 +1,27 @@
+class apache2 {
+  package { 'apache2':
+    ensure => installed,
+  }
+
+  service { 'apache2':
+    ensure  => true,
+    enable  => true,
+    require => Package['apache2'],
+  }
+}
+
+node 'puppetagent.test.org'
+ {
+   include apache2
+}
+
+
+class jenkins
+{
+exec 
+{
+'install_jenkins_package_keys
+
+
+
+
